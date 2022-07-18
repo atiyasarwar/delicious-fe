@@ -11,12 +11,14 @@ export default function Ingredients({setFormValues}) {
   const [weightInputValue, setWeightInputValue] = useState("");
   const [search, setSearch] = useState("");
   const {
-    data: item,
+    data: ingredientData = {},
     isLoading,
     refetch,
   } = useGetIngredients({
     search: search,
   });
+
+  const item = !isLoading ? ingredientData?.ingredient : [];
 
   useEffect(() => {
     setTimeout(() => {
