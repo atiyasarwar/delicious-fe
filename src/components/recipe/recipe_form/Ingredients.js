@@ -10,15 +10,16 @@ export default function Ingredients({setFormValues}) {
   const [inputValue, setInputValue] = useState({});
   const [weightInputValue, setWeightInputValue] = useState("");
   const [search, setSearch] = useState("");
+
   const {
-    data: ingredientData = {},
+    data: ingredientList = {},
     isLoading,
     refetch,
   } = useGetIngredients({
     search: search,
   });
 
-  const item = !isLoading ? ingredientData?.ingredient : [];
+  const item = !isLoading ? ingredientList?.ingredient : [];
 
   useEffect(() => {
     setTimeout(() => {
@@ -142,6 +143,7 @@ export default function Ingredients({setFormValues}) {
                           style={{
                             background: isHighlighted ? "lightgray" : "white",
                           }}
+                          key={item._id}
                         >
                           {item.name}
                         </div>
