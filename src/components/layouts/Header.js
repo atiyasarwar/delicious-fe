@@ -14,7 +14,7 @@ const token = AuthService.getToken();
 const userNavigation = [
   {name: "Suggested Recipes", to: "/suggested"},
   {name: "Favourites", to: "/favourites"},
-  {name: "My Profile", to: "/profile"},
+  {name: "My Profile", to: "/my-profile"},
 ];
 
 export default function Header() {
